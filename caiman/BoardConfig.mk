@@ -13,6 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+DISABLE_ARTIFACT_PATH_REQUIREMENTS := true
 
 TARGET_BOARD_INFO_FILE := device/google/caimito/board-info.txt
 TARGET_BOOTLOADER_BOARD_NAME := caiman
