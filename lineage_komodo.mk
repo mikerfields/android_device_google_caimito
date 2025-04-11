@@ -19,15 +19,30 @@ $(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-lineage.mk)
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 9 Pro XL
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := infinity_$(DEVICE_CODENAME)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2992
 TARGET_SCREEN_WIDTH := 1344
 
+# GMS
+WITH_GAPPS := true
+TARGET_INCLUDE_GOOGLE_DIALER := true
+
+# Infinity
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := "MikerFields"
+TARGET_SUPPORTS_BLUR := true
+USE_MOTO_CALCULATOR := false
+TARGET_FACE_UNLOCK_SUPPORTED := false
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="komodo-user 15 BP1A.250305.020 13009785 release-keys" \
     BuildFingerprint=google/komodo/komodo:15/BP1A.250305.020/13009785:user/release-keys \
+    ro.infinity.soc=Tensor g4
+    ro.infinity.battery=5060 mAh
+    ro.infinity.display=2992 x 1344, 120 Hz
+    ro.product.marketname=Google Pixel 9 Pro XL
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)

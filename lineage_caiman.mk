@@ -25,9 +25,24 @@ PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
 TARGET_SCREEN_HEIGHT := 2856
 TARGET_SCREEN_WIDTH := 1280
 
+# GMS
+WITH_GAPPS := true
+TARGET_INCLUDE_GOOGLE_DIALER := true
+
+# Infinity
+INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_MAINTAINER := "MikerFields"
+TARGET_SUPPORTS_BLUR := true
+USE_MOTO_CALCULATOR := false
+TARGET_FACE_UNLOCK_SUPPORTED := false
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="caiman-user 15 BP1A.250305.020 13009785 release-keys" \
     BuildFingerprint=google/caiman/caiman:15/BP1A.250305.020/13009785:user/release-keys \
+    ro.infinity.soc=Tensor g4
+    ro.infinity.battery=4700 mAh
+    ro.infinity.display=2856 x 1280, 120 Hz
+    ro.product.marketname=Google Pixel 9 Pro
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
