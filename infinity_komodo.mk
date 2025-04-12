@@ -27,22 +27,22 @@ TARGET_SCREEN_WIDTH := 1344
 
 # GMS
 WITH_GAPPS := true
-TARGET_INCLUDE_GOOGLE_DIALER := true
+TARGET_SHIPS_FULL_GAPPS := true
+TARGET_BUILD_GOOGLE_TELEPHONY := true
 
 # Infinity
-INFINITY_BUILD_TYPE := OFFICIAL
+INFINITY_BUILD_TYPE := UNOFFICIAL
 INFINITY_MAINTAINER := "MikerFields"
-TARGET_SUPPORTS_BLUR := true
-USE_MOTO_CALCULATOR := false
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
 TARGET_FACE_UNLOCK_SUPPORTED := false
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+PRODUCT_NO_CAMERA := true
+
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="komodo-user 15 BP1A.250305.020 13009785 release-keys" \
     BuildFingerprint=google/komodo/komodo:15/BP1A.250305.020/13009785:user/release-keys \
-    ro.infinity.soc=Tensor g4
-    ro.infinity.battery=5060 mAh
-    ro.infinity.display=2992 x 1344, 120 Hz
-    ro.product.marketname=Google Pixel 9 Pro XL
     DeviceProduct=$(DEVICE_CODENAME)
 
 $(call inherit-product, $(VENDOR_PATH)/$(DEVICE_CODENAME)-vendor.mk)
