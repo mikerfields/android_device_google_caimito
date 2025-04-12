@@ -35,7 +35,7 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/factory_tokay.mk \
     $(LOCAL_DIR)/infinity_caiman.mk \
     $(LOCAL_DIR)/infintiy_komodo.mk \
-    $(LOCAL_DIR)/lineage_tokay.mk
+    $(LOCAL_DIR)/infintiy_tokay.mk
 
 COMMON_LUNCH_CHOICES := \
     aosp_caiman-trunk_staging-userdebug \

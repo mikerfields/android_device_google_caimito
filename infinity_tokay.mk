@@ -6,24 +6,38 @@
 
 # Inherit some common stuff
 TARGET_DISABLE_EPPE := true
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/infinity/config/common_full_phone.mk)
 
 # Inherit device configuration
 DEVICE_CODENAME := tokay
 DEVICE_PATH := device/google/caimito
 VENDOR_PATH := vendor/google/tokay
 $(call inherit-product, $(DEVICE_PATH)/aosp_$(DEVICE_CODENAME).mk)
-$(call inherit-product, device/google/zumapro/lineage_common.mk)
-$(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-lineage.mk)
+$(call inherit-product, device/google/zumapro/infinity_common.mk)
+$(call inherit-product, $(DEVICE_PATH)/$(DEVICE_CODENAME)/device-infinity.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 9
-PRODUCT_NAME := lineage_$(DEVICE_CODENAME)
+PRODUCT_NAME := infinity_$(DEVICE_CODENAME)
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2424
 TARGET_SCREEN_WIDTH := 1080
+
+# GMS
+WITH_GAPPS := true
+TARGET_SHIPS_FULL_GAPPS := true
+TARGET_BUILD_GOOGLE_TELEPHONY := true
+
+# Infinity
+INFINITY_BUILD_TYPE := UNOFFICIAL
+INFINITY_MAINTAINER := "MikerFields"
+TARGET_SUPPORTS_NEXT_GEN_ASSISTANT := true
+TARGET_FACE_UNLOCK_SUPPORTED := false
+TARGET_HAS_UDFPS := true
+TARGET_SUPPORTS_QUICK_TAP := true
+PRODUCT_NO_CAMERA := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="tokay-user 15 BP1A.250305.020 13009785 release-keys" \
