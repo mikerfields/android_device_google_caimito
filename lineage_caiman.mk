@@ -46,12 +46,11 @@ endif
 endif
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BuildDesc="caiman-user 15 AP4A.250205.002 12821496 release-keys" \
-    BuildFingerprint=google/caiman/caiman:15/AP4A.250205.002/12821496:user/release-keys \
+    BuildDesc="caiman-user 15 BP1A.250405.007 13240079 release-keys" \
+    BuildFingerprint=google/caiman/caiman:15/BP1A.250405.007/13240079:user/release-keys \
     DeviceProduct=$(DEVICE_CODENAME) \
     RisingChipset="Tensor G4" \
     RisingMaintainer="MikerFields"
-
 
 ifneq ($(wildcard vendor/google_devices/caiman/proprietary/device-vendor.mk),)
 else
